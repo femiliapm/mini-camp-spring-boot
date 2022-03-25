@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+
+@Data
 @Entity
 @Table(name = "tbl_person")
 public class Person {
@@ -19,4 +22,7 @@ public class Person {
 
   @Column(length = 20, nullable = false)
   private String lastName;
+
+  @Column(length = 30, nullable = false, unique = true)
+  private String email;
 }
